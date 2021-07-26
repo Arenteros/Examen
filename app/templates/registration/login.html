@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+<br><br><br><br><br><br><br><br>
+
+<div class="row container">
+    <form class="col s12" action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <br>
+        <div class="row">
+            <input type="submit" class="btn right" value="Ingresar">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

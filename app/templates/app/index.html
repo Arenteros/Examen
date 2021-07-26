@@ -1,0 +1,110 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+{% endblock %}
+
+{% block contenido %}
+
+<body class="body-index">
+  <!-- Inicio Imagen Fondo -->
+  <section class="banner"></section>
+  <div class="banner-img">
+  </div>
+  </section>
+  <!-- Fin Imagen Fondo -->
+
+  <!-- Imagen Inicio -->
+
+  <div class="container" id="logo-index">
+    <div class="row">
+      <div class="col offset-l4">
+        <a href=""><img src="{% static 'app/dist/img/logo.png' %}" alt="" height="300"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Imagen Fin -->
+
+  <!-- INICIO DATOS EXTRA -->
+  <div class="datos-extra">
+    <div class="container pink lighten-4 center-align white-text">
+      <div class="row">
+        <div class="col s12 m12 l12">
+          <div class="col s12 m12 l4">
+            <h6>COMPRA</h6>
+            <i class="medium material-icons"><a href="#titulo-productos">local_grocery_store</a></i>
+            <p>¿Con ganas de decorar tu hogar? Revisa nuestros hermosos productos sin moverte de tu casa</p>
+          </div>
+          <div class="col s12 m12 l4">
+            <h6>CONTACTANOS</h6>
+            <i class="medium material-icons"><a href="http://wa.link/b3btec">call</a></i>
+            <p>¿Tienes dudas? Contactanos desde tu teléfono móvil. ¡Te responderemos lo mas rápido posible!
+            </p>
+          </div>
+
+          <div class="col s12 m12 l4">
+            <h6>MAPA</h6>
+            <i class="medium material-icons"><a href="https://goo.gl/maps/3jURdZaWVW4L7iQT8">location_on</a></i>
+            <p>¿Quieres venir a ver nuestro productos presencialmente? Mira nuestra ubicación. ¡Te
+              esperamos!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIN DATOS EXTRA -->
+
+  <!-- INICIO PRODUCTOS -->
+  <div class="titulo-productos center-align" id="titulo-productos">
+    <h2>PRODUCTOS</h2>
+  </div>
+
+  <!-- INICIO TEST -->
+  {% for aux in listasProductos %}
+  <div>
+    <div class="row">
+      <div class="col s12 m12 l6">
+        <div class="card horizontal">
+          <div class="card-image">
+            {% if aux.imagen %}
+            <a href=""><img src="{{ aux.imagen.url }}" alt="" width="300" height="280"></a>
+            {% else %}
+            <img src="{% static 'app/dist/img/logo.png' %}" alt="" width="300" height="280">
+            {% endif %}
+          </div>
+          <div class="card-stacked">
+            <div class="card-content col s12">
+              <div class="texto-producto">
+                <a href="">
+                  <p class="black-text"><b>{{ aux.nombre }}</b></p>
+                </a>
+                <p><b>${{ aux.precio }}</b></p>
+              </div>
+            </div>
+            <div class="card-action col s12">
+              <div class="acciones-productos">
+                <div class="col s12 right-align">
+                  <a href="">Mas información</a>
+                  <div class="añadir">
+                    <a href="">comprar</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- FIN TEST -->
+</body>
+
+{% endblock %}
+
+
+{% block javascript %}
+{% endblock %}

@@ -1,0 +1,254 @@
+#body-quienes {
+    background-color: rgb(204, 243, 228);
+}
+
+#titulo-productos {
+    padding-top: 30px;
+}
+
+.nav-wrapper  {
+    padding-left: 20px;
+}
+
+.container-ofertas-titulo {
+    margin-top: 80px;
+    
+}
+
+body {
+    background-color: #ffffffe5;
+    font-family: monospace;
+
+}
+
+.titulo-ofertas {
+    font-family: monospace;
+    top: 0;
+    
+}
+
+.imagen-body {
+    margin-left: 0;
+   
+}
+
+#footer-inicio {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+#footer-despacho {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+
+}
+
+.datos-extra {
+    margin-bottom: 5vh;
+}
+
+
+header {
+    z-index: 10;
+}
+
+.banner-img {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/body.jpg');
+    background-size: cover;
+    z-index: -1;
+}
+
+.banner .banner-img::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .5;
+    content: '';
+}
+
+.añadir {
+    padding-top:5px;
+}
+
+.texto-producto-filas-3 {
+    font-size: 11px;
+}
+
+.acciones-productos-filas-3 {
+    font-size: 13px;
+}
+
+.texto-producto-proximamente {
+    font-size: 28x;
+}
+
+.copyright {
+    font-size: 11px;
+}
+
+#info-despacho {
+    margin-top: 10vh;
+}
+
+#color-letra {
+    color: rgba(139, 0, 97, 0.822);
+}
+
+.color-letra {
+    color: rgba(139, 0, 97, 0.822);
+}
+
+#Quienes-Somos {
+    color: rgba(49, 43, 47, 0.822);
+    margin-left:25px;
+}
+
+#cuerpo-quienes {
+    color: rgba(49, 43, 47, 0.822);
+    font-size: 15px;
+}
+
+.titulos-cuerpo {
+    background-color: #f48fb1;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#img-1-quienes-somos {
+    padding-left: 40px;
+    padding-top: 30px;
+}
+
+#img-2-quienes-somos{
+    padding-left: 50px;
+    padding-top: 80px;
+}
+
+
+#img-3-quienes-somos {
+    padding-left: 50px;
+    padding-top: 80px;
+}
+
+#tarjeta-producto {
+    margin-top: 0;
+    padding-left: 30px;
+    
+}
+
+#container-producto {
+    margin-top: 100px;
+}
+
+#titulo-icono {
+    top:0;
+}
+
+#boton-compra {
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+#formulario {
+    margin-left: 70vh;
+}
+
+.titulo-formulario {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#cuerpo-formulario{
+    background-color: #fce4ec;
+}
+
+#formulario {
+    margin-left: 75vh;
+}
+
+.modal-footer {
+    margin-bottom: 15px;
+}
+
+#info-login {
+    margin-top: 50px;
+}
+
+#logo-index {
+    margin-top: 20vh;
+    margin-bottom: 55vh;
+}
+
+.body-index {
+    background-color: rgb(255, 196, 235);
+}
+
+@media(max-width: 901px) {
+    #formulario {
+        margin-left: 25vh;
+    }
+}
+
+@media(max-width: 600px) {
+    #formulario {
+        margin-left: 0;
+    }
+}
+
+
+@media(max-width: 600px) {
+    .texto-producto {
+        font-size: 10px;
+    }
+    
+    .acciones-productos {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 600px) {
+    #img-1-quienes-somos {
+        padding-top: 30px;
+        width: 350px;
+    }
+
+    #img-2-quienes-somos{
+        padding-top: 40px;
+        width: 350px;
+    }
+    
+    #img-3-quienes-somos {
+        padding-top: 40px;
+        width: 350px;
+    }
+}
+
+@media(max-width: 901px) {
+    #img-1-quienes-somos {
+        padding-top: 37vh;
+        width: 330px;
+    }
+
+    #img-2-quienes-somos{
+        
+        padding-top: 250px;
+        width: 330px;
+    }
+    
+    #img-3-quienes-somos {
+        
+        padding-top: 250px;
+        width: 330px;
+    }
+}

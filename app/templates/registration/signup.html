@@ -1,0 +1,28 @@
+{% extends 'app/base2.html' %}
+{% load static %}
+
+{% block csss %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+{% endblock %}
+
+{% block contenidos %}
+<br><br><br>
+<div class="row container">
+    <form class="col s12" action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <div class="row">
+            <div class="input-field col s12">
+                <br>
+                <input type="submit" class="btn right" value="Registrar">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

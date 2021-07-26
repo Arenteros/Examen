@@ -1,0 +1,94 @@
+{% extends 'app/base2.html' %}
+{% load static %}
+
+{% block csss %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+{% endblock %}
+
+{% block contenidos %}
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <td><b>NOMBRE</b></td>
+                    <td><b>PRECIO</b></td>
+                    <td><b>DESCRIPCION</b></td>
+                    <td><b>TIPO DE PRODUCTO</b></td>
+                    <td><b>IMAGEN</b></td>
+                    <td><b>OPCIONES</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for aux in listasProductos %}
+                <tr>
+                    <td>{{ aux.nombre }}</td>
+                    <td>{{ aux.precio }}</td>
+                    <td>{{ aux.descripcion }}</td>
+                    <td>{{ aux.tipo }}</td>
+                    <td>
+                        {% if aux.imagen %}
+                        <img src="{{ aux.imagen.url }}" alt="" width="200" height="150">
+                        {% else %}
+                        <p>Producto sin imagen</p>
+                        {% endif %}
+
+                    </td>
+                    <td>
+                        {% if perms.app.change_producto %}
+                        <a href="{% url 'modificar_producto' aux.id %}" class="btn">Modificar</a>
+                        {% endif %}
+                        {% if perms.app.delete_producto %}
+                        <a onclick="confirmarDelete({{ aux.id }})" class="btn">Eliminar</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div>
+            {% include 'app/paginator.html' %}
+        </div>
+
+    </div>
+
+    {% block javascripts %}
+    <script>
+        $(document).ready(function () {
+
+            // Initialize materialize data picker
+            $('.datepicker').datepicker({ 'format': 'yyyy-mm-dd' });
+            $('select').formSelect();
+
+        });
+    </script>
+
+    <script src="{% static 'app/dist/js/materialize.js' %}"></script>
+
+    <script src="{% static 'app/dist/js/materialize.min.js' %}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- INICIALIZACION MODAL -->
+    <script>document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });</script>
+
+    <script>
+        $(".dropdown-trigger").dropdown();
+    </script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{% static 'app/dist/js/funcionalidades.js' %}"></script>
+
+    {% endblock %}
+
+</body>
+
+</html>
+
+{% endblock %}

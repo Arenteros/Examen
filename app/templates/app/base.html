@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio</title>
+    {% load static %}
+    {% block css %}
+
+    {% endblock %}
+    
+    {% load pwa %}
+
+    {% progressive_web_app_meta %}
+
+    <link rel="stylesheet" href="{% static 'app/dist/css/FlorArte.css' %}">
+
+    <link rel="stylesheet" href="{% static 'app/dist/css/materialize.css' %}">
+
+    <link rel="stylesheet" href="{% static 'app/dist/css/materialize.min.css' %}">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/css/materialize.min.css"
+        integrity="sha256-qj3p6P1fJIV+Ndv7RW1ovZI2UhOuboj9GcODzcNFIN8=" crossorigin="anonymous" />
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    {% if perms.app.view_producto or perms.app.change_producto or perms.app.delete_producto or perms.app.add_producto %}
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="{% url 'agregar_producto' %}">Agregar</a></li>
+        <li><a href="{% url 'producto' %}">Modificar</a></li>
+        <li><a href="{% url 'producto' %}">Eliminar</a></li>
+    </ul>
+    {% endif %}
+
+    {% if perms.app.view_producto or perms.app.change_producto or perms.app.delete_producto or perms.app.add_producto %}
+    <ul id="dropdown2" class="dropdown-content">
+        <li><a href="{% url 'agregar_producto' %}">Agregar</a></li>
+        <li><a href="{% url 'producto' %}">Modificar</a></li>
+        <li><a href="{% url 'producto' %}">Eliminar</a></li>
+    </ul>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <ul id="dropdown3" class="dropdown-content">
+        <li><a href="">{{ user.username }}</a></li>
+        <li><a href="{% url 'logout' %}"> Cerrar Sesión</a></li>
+    </ul>
+    
+    <ul id="dropdown4" class="dropdown-content">
+        <li><a href="">{{ user.username }}</a></li>
+        <li><a href="{% url 'logout' %}"> Cerrar Sesión</a></li>
+    </ul>
+    {% endif %}
+
+    <nav>
+        <div class="nav-wrapper pink lighten-3">
+            <a href="{% url 'index' %}" class="brand-logo">FLORARTE</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                {% if user.is_authenticated %}
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown3">Mi Perfil<i class="material-icons right">arrow_drop_down</i></a></li>
+                {% endif %}
+                {% if perms.app.view_producto or perms.app.change_producto or perms.app.delete_producto or perms.app.add_producto %}
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Editar<i class="material-icons right">arrow_drop_down</i></a></li>
+                {% endif %}
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'quienes' %}">Quienes Somos</a></li>
+                <li><a href="{% url 'suscripcion' %}">Suscripcion</a></li>
+                {% if not user.is_authenticated %}
+                <li><a href="{% url 'registro_usuario' %}">Registrar</a></li>
+                {% endif %}
+                {% if not user.is_authenticated %}
+                <li><a href="{% url 'login' %}" class="btn">Iniciar Sesión</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <!-- /.navbar -->
+
+    <ul class="sidenav pink lighten-5" id="mobile-demo">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li><a href="{% url 'quienes' %}">Quienes Somos</a></li>
+        <li><a href="{% url 'suscripcion' %}">Suscripcion</a></li>
+        {% if not user.is_authenticated %}
+        <li><a href="{% url 'registro_usuario' %}">Registrar</a></li>
+        {% endif %}
+        {% if perms.app.view_producto or perms.app.change_producto or perms.app.delete_producto or perms.app.add_producto%}
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Editar<i class="material-icons right">arrow_drop_down</i></a></li>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown4">Mi Perfil<i class="material-icons right">arrow_drop_down</i></a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}" class="btn">Iniciar Sesión</a></li>
+        {% endif %}
+    </ul>
+
+    <!-- INICIALIZACIÓN NAVBAR -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });</script>
+    <!-- FIN NAVBAR -->
+
+    <div class="container-fluid"></div>
+    {% block contenido %}
+
+    {% endblock %}
+    </div>
+
+    <!-- INICIO FOOTER -->
+    <footer class="page-footer pink lighten-3" id="footer-despacho">
+        <div class="container">
+            <div class="row">
+                <div class="col l4 m4 s6" id="contenido-footer">
+                    <h5 class="white-text">Vinculos Rapidos</h5>
+                    <div class="contenedor-links">
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Fundación</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Reclamos</a></li>
+                        </ul>
+                        <p class="copyright">© 2021 Florarte. All rights reserved.</p>
+                    </div>
+                </div>
+                <div class="col l4 m4 s6">
+                    <h5 class="white-text"> Nosotros</h5>
+                    <div class="contenedor-links">
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="{% url 'quienes' %}">Mision y
+                                    Vision</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Trabaja con nosotros</a></li>
+                        </ul>
+                    </div>
+                </div>
+    </footer>
+    <!-- FIN FOOTER -->
+    {% block javascript %}
+
+    {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js"
+        integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+    <script src="sweetalert2.all.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="{% static 'app/plugins/jquery/jquery.min.js' %}"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{% static 'app/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="{% static 'app/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- ChartJS -->
+    <script src="{% static 'app/plugins/chart.js/Chart.min.js' %}"></script>
+    <!-- Sparkline -->
+    <script src="{% static 'app/plugins/sparklines/sparkline.js' %}"></script>
+    <!-- JQVMap -->
+    <script src="{% static 'app/plugins/jqvmap/jquery.vmap.min.js' %}"></script>
+    <script src="{% static 'app/plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="{% static 'app/plugins/jquery-knob/jquery.knob.min.js' %}"></script>
+    <!-- daterangepicker -->
+    <script src="{% static 'app/plugins/moment/moment.min.js' %}"></script>
+    <script src="{% static 'app/plugins/daterangepicker/daterangepicker.js' %}"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{% static 'app/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+    <!-- Summernote -->
+    <script src="{% static 'app/plugins/summernote/summernote-bs4.min.js' %}"></script>
+    <!-- overlayScrollbars -->
+    <script src="{% static 'app/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'app/dist/js/adminlte.js' %}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{% static 'app/dist/js/demo.js' %}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{% static 'app/dist/js/pages/dashboard.js' %}"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            // Initialize materialize data picker
+            $('.datepicker').datepicker({ 'format': 'yyyy-mm-dd' });
+            $('select').formSelect();
+
+        });
+    </script>
+
+    <script src="{% static 'app/dist/js/materialize.js' %}"></script>
+
+    <script src="{% static 'app/dist/js/materialize.min.js' %}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- INICIALIZACION MODAL -->
+    <script>document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });</script>
+
+    <script>
+        $(".dropdown-trigger").dropdown();
+    </script>
+
+</body>
+
+</html>

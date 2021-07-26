@@ -1,0 +1,189 @@
+{% extends 'app/base2.html' %}
+{% load static %}
+
+{% block csss %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+{% endblock %}
+
+{% block contenidos %}
+
+<body>
+    <body id="body-quienes">
+        <div class="container" id="Quienes-Somos">
+            <div class="row">
+                <div class="col s12 m8 l8 center-align">
+                    <h4 id="titulo-quienes">Nuestra declaración de misión Florarte</h4><br>
+
+                    <h5 id="titulo-quienes">Nuestra misión: Inspirar y nutrir el espiritu humano, una persona, un ramo
+                        de
+                        flores y una comunidad a la vez.</h5><br>
+
+                    <h6>A continuación figuran los principios que rigen cómo la hacemos realidad cada día:</h6><br>
+
+                    <div class="titulos-cuerpo">
+                        <h6>Nuestros productos</h6>
+                    </div>
+
+                    <h6 id="cuerpo-quienes">Siempre han sido y siempre serán de la mejor calidad. Nos apasiona la labor
+                        de
+                        abastecernos de los mejores productos siguiendo estrictos principios éticos, llevandolos con el
+                        máximo cuidado y mejorar la vida de las personas que los cultivan. Todo ello nos parece de suma
+                        importancia, nunca damos nuestra labor por concluida.</h6><br>
+
+                    <div class="titulos-cuerpo">
+                        <h6>Nuestros partners</h6>
+                    </div>
+
+                    <h6 id="cuerpo-quienes">Nos llamamos partners, porque no se trata de un puesto de trabajo, sino de
+                        nuestra pasión. Juntos hacemos nuestra la diversidad para crear un lugar donde cada uno de
+                        nosotros
+                        pueda ser quien es. Siempre nos tratamos con respeto y dignidad entre nosotros. Y exigimos a
+                        nuestros compañeros que estén a la altura.</h6><br>
+
+                    <div class="titulos-cuerpo">
+                        <h6>Nuestros clientes</h6>
+                    </div>
+
+                    <h6 id="cuerpo-quienes">Cuando nuestro compromiso es pleno, establecemos una relación con nuestros
+                        clientes, nos reímos con ellos y les alegramos la vida, aunque sean solo unos instantes. No cabe
+                        duda de que todo parte de la promesa de un ramo de flores elaborado a la perfección, pero
+                        nuestro
+                        trabajo
+                        va mucho más allá. De lo que se trata, en realidad, es de conexión humana.</h6><br>
+
+                    <div class="titulos-cuerpo">
+                        <h6>Nuestra comunidad</h6>
+                    </div>
+
+                    <h6 id="cuerpo-quienes">Cada tienda forma parte de una comunidad, y nos tomamos muy en serio la
+                        responsabilidad de ser buenos vecinos. Nos gusta colaborar y participar en acciones locales en
+                        los
+                        lugares donde operamos. Podemos constituir una fuerza de actuación positiva, consiguiendo reunir
+                        a
+                        nuestros partners, nuestros clientes y nuestra comunidad, para que contribuyan a ello día a día.
+                        Y
+                        así conseguir que nuestra responsabilidad (y nuestro potencial positivo) sea aún mayor.
+                    </h6><br>
+
+                    <div class="titulos-cuerpo">
+                        <h6>Declaración de misión sobre el medio ambiente</h6>
+                    </div>
+
+                    <h6 id="cuerpo-quienes">En Starbucks tenemos el compromiso de desempeñar una función de liderazgo
+                        medioambiental en todas las facetas de nuestro negocio.
+                    </h6><br>
+
+                    <div class="titulos-cuerpo">
+                        <h6>Cumplimos esta misión con el compromiso de:</h6>
+                    </div>
+
+                    <ul>
+                        <li>Entender los problemas medioambientales y compartir información con nuestros trabajadores.
+                        </li>
+                        <li>Desarrollar soluciones innovadoras y flexibles para propiciar el cambio.</li>
+                        <li>Esforzarnos por comprar, vender y utilizar productos respetuosos con el medio ambiente.</li>
+                        <li>Reconocer que la responsabilidad financiera es esencial para nuestro futuro medioambiental.
+                        </li>
+                        <li>Infundir la responsabilidad medioambiental como valor corporativo.</li>
+                        <li>Medir y supervisar nuestros progresos en cada proyecto.</li>
+                        <li>Alentar a todos los trabajadores para que hagan suya nuestra misión.</li>
+                    </ul>
+                </div>
+
+                <div class="col s12 m4 l4">
+                    <div id="img-1-quienes-somos" class="fotos-quienes">
+                        <img class="responsive-img" src="{% static 'app/dist/img/quienes1.jpg' %}">
+                    </div>
+                    <div id="img-2-quienes-somos" class="fotos-quienes">
+                        <img class="responsive-img" src="{% static 'app/dist/img/quienes2.jpg' %}">
+                    </div>
+                    <div id="img-3-quienes-somos" class="fotos-quienes">
+                        <img class="responsive-img" src="{% static 'app/dist/img/quienes3.jpg' %}">
+                    </div>
+                </div>
+            </div>
+            <!-- FIN QUIENES SOMOS -->
+    </body>
+    
+    {% block javascript %}
+
+    {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js"
+        integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+    <script src="sweetalert2.all.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="{% static 'app/plugins/jquery/jquery.min.js' %}"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{% static 'app/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="{% static 'app/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- ChartJS -->
+    <script src="{% static 'app/plugins/chart.js/Chart.min.js' %}"></script>
+    <!-- Sparkline -->
+    <script src="{% static 'app/plugins/sparklines/sparkline.js' %}"></script>
+    <!-- JQVMap -->
+    <script src="{% static 'app/plugins/jqvmap/jquery.vmap.min.js' %}"></script>
+    <script src="{% static 'app/plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="{% static 'app/plugins/jquery-knob/jquery.knob.min.js' %}"></script>
+    <!-- daterangepicker -->
+    <script src="{% static 'app/plugins/moment/moment.min.js' %}"></script>
+    <script src="{% static 'app/plugins/daterangepicker/daterangepicker.js' %}"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{% static 'app/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+    <!-- Summernote -->
+    <script src="{% static 'app/plugins/summernote/summernote-bs4.min.js' %}"></script>
+    <!-- overlayScrollbars -->
+    <script src="{% static 'app/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'app/dist/js/adminlte.js' %}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{% static 'app/dist/js/demo.js' %}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{% static 'app/dist/js/pages/dashboard.js' %}"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            // Initialize materialize data picker
+            $('.datepicker').datepicker({ 'format': 'yyyy-mm-dd' });
+            $('select').formSelect();
+
+        });
+    </script>
+
+    <script src="{% static 'app/dist/js/materialize.js' %}"></script>
+
+    <script src="{% static 'app/dist/js/materialize.min.js' %}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- INICIALIZACION MODAL -->
+    <script>document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });</script>
+
+    <script>
+        $(".dropdown-trigger").dropdown();
+    </script>
+
+</body>
+
+{% endblock %}
+
+
+{% block javascripts %}
+{% endblock %}
